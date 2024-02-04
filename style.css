@@ -1,0 +1,225 @@
+/*** RESET ***/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+html {
+    color-scheme: dark light;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 1rem;
+    font-family: var(--ff--Work-sans);
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/*** main css ***/
+
+:root {
+    --clr--White: hsl(0, 0%, 100%);
+    --clr--Light-pink: hsl(276, 100%, 97%);
+    --clr--Grayish-purple: hsl(292, 16%, 49%);
+    --clr--Dark-purple: hsl(292, 42%, 14%);
+    --ff--Work-sans: 'Work Sans', sans-serif;
+    --fw--400: 400;
+    --fw--600: 600;
+    --fw--700: 700;
+}
+
+.container {
+    max-width: 100%;
+    max-width: 90rem;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: url("./assets/images/background-pattern-mobile.svg"),
+        var(--clr--Light-pink);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-top: 8.95em;
+    position: relative;
+}
+
+.main {
+    width: 87%;
+    height: fit-content;
+    background-color: var(--clr--White);
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 1.5em 1em 0.1em 1.5em;
+}
+
+.main h1::before {
+    content: url("./assets/images/icon-star.svg");
+    transform: scale(.6);
+    align-self: center;
+    margin-right: 0.5em;
+}
+
+.main h1 {
+    font-size: 2rem;
+    font-weight: var(--fw--700);
+    color: var(--clr--Dark-purple);
+    display: flex;
+    align-self: center;
+    align-items: center;
+    margin-bottom: -0.3em;
+}
+
+.main__card {
+    width: 97.5%;
+    border-bottom: 1px solid lightgray;
+}
+
+.main__card:last-of-type {
+    border-bottom: 0;
+}
+
+.main__card--question {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.6em;
+}
+
+.main__card--question h2 {
+    font-size: 1rem;
+    color: var(--clr--Dark-purple);
+    font-weight: var(--fw--700);
+    line-height: 1.1;
+    width: 97%;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5em 0;
+
+}
+
+.main__card--question h2:hover {
+    color: rgb(235, 36, 225);
+    cursor: pointer;
+    caret-color: red;
+}
+
+.main__card p {
+    font-size: 0.9rem;
+    color: var(--clr--Grayish-purple);
+    font-weight: var(--fw--400);
+    line-height: 1.5;
+    margin-bottom: 1.5em;
+    
+}
+
+p {
+    display: none;
+}
+
+.icon-plus {
+    display: block;
+}
+
+.icon-minus {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width:600px) {
+    .container {
+        width: 100%;
+        max-width: 90rem;
+        margin: 0 auto;
+        height: 100vh;
+        background: url("./assets/images/background-pattern-desktop.svg"),
+            var(--clr--Light-pink);
+        background-size: 100;
+        background-repeat: no-repeat;
+        padding-top: 10.35em;
+        position: relative;
+    }
+
+    .main {
+        width: 59%;
+        background-color: var(--clr--White);
+        border-radius: 15px;
+        margin: 0 auto;
+        padding: 1.5em 1.5em 1.5em 2.5em;
+    }
+}
+
+@media (min-width:900px) {
+    .main {
+        width: 41.7%;
+        background-color: var(--clr--White);
+        border-radius: 15px;
+        margin: 0 auto;
+        padding: 2.5em 1.5em 1.5em 2.5em;
+    }
+
+    .main h1 {
+        font-size: 3.5rem;
+        font-weight: var(--fw--700);
+        color: var(--clr--Dark-purple);
+        display: flex;
+        align-self: center;
+        align-items: center;
+        margin-bottom: 0.15em;
+    }
+
+    .main h1::before {
+        transform: scale(1);
+        margin-right: 0.5em;
+    }
+
+    .main__card--question h2 {
+        font-size: 1.1rem;
+        width: 97%;
+        padding: 1.7em 0;
+    }
+
+    .main__card p {
+        font-size: 1rem;
+        margin-top: 0;
+        margin-bottom: 1.5em;
+    }
+}
